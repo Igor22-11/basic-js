@@ -13,14 +13,15 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function deleteDigit( n ) {
   // throw new NotImplementedError('Not implemented');
-  let str = n.toString()
-  for (let i = 0; i <= 9; i++){
-    for (let j = 0; j < str.length; j++){
-      if (i === Number(str[j])){
-        return Number(str.replace(Number(i),''));
-      }
-    }
- }
+  let toStr = n.toString();
+  let array = [];
+  for (let i = 0; i < toStr.length; i++) {
+    let arr = toStr.split('');
+    arr.splice(i, 1);
+    array.push(+arr.join(''));
+  }
+
+  return array.sort((a, b) => b-a)[0];
 }
 
 module.exports = {
