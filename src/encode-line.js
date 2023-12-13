@@ -10,14 +10,14 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For aabbbc should return 2a3bc
  *
  */
-function encodeLine( str ) {
+function encodeLine(str) {
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
   let cont = 1;
   let string = '';
 
-  for(let i = 0; i < str.length; i++) {
-    if(str[i] === str[i + 1]) {
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i + 1]) {
       cont = cont + 1;
     } else {
       string += `${cont == 1 ? '' : cont}${str[i]}`;

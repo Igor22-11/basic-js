@@ -15,13 +15,18 @@ const { NotImplementedError } = require('../extensions/index.js');
  * => 'STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS'
  *
  */
-function repeater( str, options ) {
-  if (options.addition === undefined){ options.addition = '';
-} if (!options.additionSeparator){ options.additionSeparator = '|';
-} if (!options.additionRepeatTimes){ options.additionRepeatTimes = 1;
-} if (!options.separator){ options.separator = '+';
-} if (!options.repeatTimes){ options.repeatTimes = 1;
-}
+function repeater(str, options) {
+  if (options.addition === undefined) {
+    options.addition = '';
+  } if (!options.additionSeparator) {
+    options.additionSeparator = '|';
+  } if (!options.additionRepeatTimes) {
+    options.additionRepeatTimes = 1;
+  } if (!options.separator) {
+    options.separator = '+';
+  } if (!options.repeatTimes) {
+    options.repeatTimes = 1;
+  }
   let array = [];
   for (let i = 0; i < options.additionRepeatTimes; i++) {
     array.push(String(options.addition));

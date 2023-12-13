@@ -20,10 +20,10 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 class VigenereCipheringMachine {
-  constructor ( direct=true ) {
-    this.direct=direct;
+  constructor(direct = true) {
+    this.direct = direct;
   }
- 
+
 
   encrypt(text, key) {
     // throw new NotImplementedError('Not implemented');
@@ -61,7 +61,7 @@ class VigenereCipheringMachine {
       } else {
         res = res + String.fromCharCode((text.charCodeAt(index) -
           key.charCodeAt(keyPos % key.length) + 26) % 26 + 65);
-        keyPos= keyPos + 1;
+        keyPos = keyPos + 1;
       }
     }
     return this.direct ? res : res.split('').reverse().join('');
